@@ -1,0 +1,119 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{%block header%}
+    
+
+    <link rel="stylesheet" href="{% static '/etest/sign_up/material-design-iconic-font.min.css' %}">
+
+    <link rel="stylesheet" href="{% static '/etest/sign_up/style.css' %}">
+    <meta name="robots" content="noindex, follow">
+    <script
+        nonce="223d7519-fd4d-4144-84e4-7c5704be6a57">(function (w, d) { !function (a, b, c, d) { a[c] = a[c] || {}; a[c].executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return function () { var f = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: f }) } }; for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g); a.zaraz.init = () => { var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0]; j && (a[c].t = b.getElementsByTagName("title")[0].text); a[c].x = Math.random(); a[c].w = a.screen.width; a[c].h = a.screen.height; a[c].j = a.innerHeight; a[c].e = a.innerWidth; a[c].l = a.location.href; a[c].r = b.referrer; a[c].k = a.screen.colorDepth; a[c].n = b.characterSet; a[c].o = (new Date).getTimezoneOffset(); if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({ ...o[1], ...p[1] })), {}))) zaraz.set(n[0], n[1], { scope: "page" }); a[c].q = []; for (; a.zaraz.q.length;) { const q = a.zaraz.q.shift(); a[c].q.push(q) } i.defer = !0; for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => { try { a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s)) } catch { a[c]["z_" + s.slice(7)] = r.getItem(s) } })); i.referrerPolicy = "origin"; i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c]))); h.parentNode.insertBefore(i, h) };["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+{%endblock%}
+
+{%block body%}
+    <div class="main">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            {%csrf_token%}
+                            <div class="form-group">
+                                <label for="Username"><i class="zmdi zmdi-account 4material-icons-name"></i></label>
+                                
+                                {% render_field form.input_user_name type="text" attr="" id="name" placeholder="Your User Name"  %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="First Name"><i class="zmdi zmdi-account 4material-icons-name"></i></label>
+                                
+                                {% render_field form.first_name type="text" attr="" id="name" placeholder="Your First Name"  %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Last Nmae"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                
+                                {% render_field form.last_name type="text" attr="" id="name" placeholder="Your Last Name"  %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                
+                                {% render_field form.email type="email" attr="" id="email" placeholder=" Your Email"  %}
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                
+                                {% render_field form.password type="password" attr="" id="password" oninput="checkPassword()" placeholder=" Your Password" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" oninput="checkPassword()" placeholder="Repeat your password" required/>
+                            </div>
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                            </div>
+                            {% if errors %}
+                            <div class="errors">
+                            <ul>
+                                {% for error in errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                            </div>
+                        {% endif %}
+                        </form>
+                        
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static '/etest/sign_up/signup-image.jpg' %}" alt="sing up image"></figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+    </div>
+
+    <script src="{% static '/etest/sign_up/jquery.min.js' %}"></script>
+    
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816"
+        integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw=="
+        data-cf-beacon='{"rayId":"7cfd85933f4240f2","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}'
+        crossorigin="anonymous"></script>
+
+
+        <script>
+            function checkPassword() {
+              var password = document.getElementById('password').value;
+              var repeatPassword = document.getElementById('re_pass').value;
+              var submitButton = document.getElementById('signup');
+              
+              if (password === repeatPassword) {
+                submitButton.disabled = false;
+                submitButton.style.background = '#6dabe4';
+              } else {
+                submitButton.disabled = true;
+                submitButton.style.background = 'red';
+              }
+            }
+          </script>
+
+
+        {%endblock%}

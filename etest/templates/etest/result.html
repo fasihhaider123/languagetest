@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+<h1>Result</h1>
+
+<button class="btn btn-primary" id="downloadButton">Download
+</button>
+
+
+<script>
+    const downloadCertificate = () => {
+        fetch(`{% url 'generate_certificate' %}`)
+        .then(response => response.blob())
+        .then(blob => {
+            const filename = 'certificate.png';
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+
+        })
+        .catch(error => {
+            console.error('Error downloading PDF:', error);
+        });
+    }
+
+document.getElementById('downloadButton').addEventListener('click', downloadCertificate);
+</script>
+
+{%endblock%}

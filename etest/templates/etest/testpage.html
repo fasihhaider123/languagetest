@@ -1,0 +1,141 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+
+<div class="container">
+  <h1>Tell us about yourself.</h1>
+  {% csrf_token %}
+  <div id="timer"></div>
+  <button id="startButton">Start Recording</button>
+  <button id="stopButton">Stop Recording</button>
+  <span id="status"></span>
+  <div>
+    <button class="btn btn-primary" id="downloadButton" style="display: none;">Download</button>
+  </div>
+
+</div>
+
+<script>
+
+  let mediaRecorder;
+  let startTime;
+
+  const startRecording = () => {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+        mediaRecorder = new MediaRecorder(stream);
+        const chunks = []; // Clear the previous recording chunks
+        startTime = Date.now();
+
+        mediaRecorder.addEventListener('dataavailable', event => {
+          chunks.push(event.data);
+        });
+
+        mediaRecorder.addEventListener('stop', () => {
+
+          const endTime = Date.now();
+          const elapsedTime = endTime - startTime;
+
+          const blob = new Blob(chunks, { type: 'audio/mp3' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'recording.mp3';
+          // a.click();
+          chunks.length = 0; // Clear the chunks after creating the download link
+
+          const formData = new FormData();
+          formData.append('audio', blob);
+
+          const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+          fetch("{% url 'audio_file' %}", {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': csrfToken
+            },
+            body: formData
+          })
+            .then(response => response.json())
+            .then(data => {
+              // Process the API response
+              document.getElementById('status').textContent = "Your test is done.";
+              document.getElementById('downloadButton').style.display = 'block';
+              // let url2 = window.location.host + "/result/" + data.message
+              // window.location.href = url2;
+
+            })
+            .catch(error => {
+              console.error('Error sending recording:', error);
+            });
+        });
+
+        mediaRecorder.start();
+        console.log('Voice recording started...');
+        startTimer();
+      })
+      .catch(error => {
+        console.error('Error accessing microphone:', error);
+      });
+  };
+
+  const stopRecording = () => {
+    mediaRecorder.stop();
+    mediaRecorder.stream.getAudioTracks().forEach(track => track.stop()); // Stop the audio tracks
+    console.log('Voice recording stopped...');
+    stopTimer();
+  };
+
+  let timerInterval;
+  const startTimer = () => {
+    const timerElement = document.getElementById('timer');
+    let elapsedTime = 0;
+
+    timerInterval = setInterval(() => {
+      elapsedTime = Date.now() - startTime; // Calculate the elapsed time in milliseconds
+      const hours = Math.floor(elapsedTime / 3600000); // Convert milliseconds to hours
+      const minutes = Math.floor((elapsedTime % 3600000) / 60000); // Convert remaining milliseconds to minutes
+      const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+
+      const formattedTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+      timerElement.textContent = `Recording time: ${formattedTime}`;
+    }, 1000);
+  };
+
+  const padZero = (value) => {
+    return value.toString().padStart(2, '0');
+  };
+
+  const stopTimer = () => {
+    clearInterval(timerInterval);
+  };
+
+  const downloadCertificate = () => {
+        fetch(`{% url 'generate_certificate' %}`)
+        .then(response => response.blob())
+        .then(blob => {
+            const filename = 'certificate.png';
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+
+        })
+        .catch(error => {
+            console.error('Error downloading PDF:', error);
+        });
+    }
+
+
+  document.getElementById('startButton').addEventListener('click', startRecording);
+  document.getElementById('stopButton').addEventListener('click', stopRecording);
+  document.getElementById('downloadButton').addEventListener('click', downloadCertificate);
+
+
+</script>
+
+
+{%endblock%}

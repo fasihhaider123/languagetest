@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{% load widget_tweaks %}
+{%block body%}
+
+<form method="POST">
+    {%csrf_token%}
+<div class="mb-3">
+    <label class="form-label">First Name</label>
+    {% render_field form.first_name type="text" attr="" class="form-control" placeholder="John"  %}
+    <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John" > -->
+  </div>
+
+  <label class="form-label">Last Name</label>
+  {% render_field form.last_name type="text" attr="" class="form-control" placeholder="Ola"  %}
+    <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ula" > -->
+  </div>
+
+  <label class="form-label">Email address</label>
+  {% render_field form.email type="email" attr="" class="form-control" placeholder="name@example.com"  %}
+    <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" > -->
+  </div>
+
+  <label class="form-label">Password</label>
+  {% render_field form.password type="password" attr="" id="password" class="form-control" oninput="checkPassword()"  %}
+    <!-- <input type="password" class="form-control" id="password" oninput="checkPassword()" > -->
+  </div>
+
+  <label class="form-label">Repeat Password</label>
+    <input type="password" class="form-control" id="repeatPassword" oninput="checkPassword()" required>
+  </div>
+  <input type="submit" name="submit" id="submitBtn">
+ </form>
+
+ {% if errors %}
+    <div class="errors">
+      <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+ <script>
+    function checkPassword() {
+      var password = document.getElementById('password').value;
+      var repeatPassword = document.getElementById('repeatPassword').value;
+      var submitButton = document.getElementById('submitBtn');
+      
+      if (password === repeatPassword) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }
+  </script>
+
+
+{%endblock%}
