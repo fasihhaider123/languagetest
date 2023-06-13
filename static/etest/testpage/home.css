@@ -73,6 +73,9 @@
   font-size: 21px;
 }
 @media(max-width: 1600px) {
+  .mid-heading{
+    font-size: 79%;
+}
   .home-container1 {
     top: 259px;
     left: 332px;
@@ -116,6 +119,9 @@
   }
 }
 @media(max-width: 1200px) {
+  .mid-heading{
+    font-size: 79%;
+}
   .home-container1 {
     top: 260px;
     left: 155px;
@@ -150,6 +156,13 @@
   }
 }
 @media(max-width: 479px) {
+  .mid-heading{
+    font-size: 79%;
+}
+  .relative {
+    position: relative;
+    font-size: 79%;
+}
   .home-container1 {
     width: 479px;
     position: 0px;
