@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app']
+CSRF_TRUSTED_ORIGINS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app','https://speaklab.azurewebsites.net']
 
 
 # Application definition
