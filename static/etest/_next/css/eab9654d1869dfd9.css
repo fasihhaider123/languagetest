@@ -1705,7 +1705,32 @@ body.active {
     color: rgb(255 255 255/var(--tw-text-opacity))
 }
 
+.icon-divs{
+
+    padding-left: 0px !important;
+    padding-right: 6%;
+}
+
+@media (max-width:500px) {
+    .slider-btn{
+        color: rgb(89, 46, 207)!important;
+        border-radius: 29px;
+        background-color: white;
+        padding: 9px;
+    }
+    .top-\[-6\.5rem\] {
+        top: -8.5rem;
+    }
+}
+
+
+
+
+
 @media (min-width:640px) {
+    /* MANUAL */
+
+    
     .mid-heading{
         font-size: 79%;
     }
@@ -2108,6 +2133,8 @@ body.active {
 }
 
 @media (min-width:1280px) {
+
+    
     .mid-heading{
         font-size: 79%;
     }

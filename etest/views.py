@@ -91,6 +91,17 @@ def audio_file(request):
         file = request.FILES['audio']
         create_at = datetime.today()
 
+
+        # audio_file = request.FILES.get('audio')
+    
+        # audio_content = audio_file.read()
+   
+        # with open('file.mp3', 'wb') as f:
+        #     f.write(audio_content)
+
+
+        # print("KKKKKKKKKK File created ")
+
         try:
             new_data = AudioData()
             new_data.user = user
@@ -103,7 +114,7 @@ def audio_file(request):
 
             data = {
                 'status' : 200,
-                'message':'Pre-intermediate level (CERF A2)',
+                'rank':'A1',
                 # 'next_page_token' : encoded_token,
                 'data' : []
             }
@@ -123,7 +134,7 @@ from django.http import HttpResponse
 @login_required(login_url='/')
 def generate_certificate(request,level):
     # Load the certificate design image
-    template_path = settings.STATIC_ROOT + '/new_certificate_template.png'  # Replace with the actual path to your certificate design image
+    template_path = settings.STATICFILES_DIRS[0] + '/new_certificate_template.png'  # Replace with the actual path to your certificate design image
     template_image = Image.open(template_path)
 
 
@@ -136,7 +147,7 @@ def generate_certificate(request,level):
     # Proficiency level (CERF C2)
 
     # Specify the font type, size, and color
-    font_path = settings.STATIC_ROOT + '/PTSerif_Bold.ttf'  # Replace with the actual path to your font file
+    font_path = settings.STATICFILES_DIRS[0] + '/PTSerif_Bold.ttf'  # Replace with the actual path to your font file
     font_size = 40
     font_color = (0, 0, 0)  # Black color
 
@@ -165,7 +176,7 @@ def generate_certificate(request,level):
     # Create a response and save the edited image
     response = HttpResponse(content_type='image/png')
     edited_image.save(response, format='PNG')
-    edited_image.save(str(settings.STATIC_ROOT) + '/Language_test333333.png', format='PNG')
+    edited_image.save(str(settings.STATICFILES_DIRS[0]) + '/Language_test333333.png', format='PNG')
 
     # Set the filename for the downloaded image
     response['Content-Disposition'] = 'attachment; filename="modified_certificate.png"'
@@ -193,7 +204,8 @@ def question_generator(request):
     
         data = {
             'status' : 200,
-            'message':'Tell us about yourself',
+            'prompt':'Tell us about yourself',
             'data' : []
         }
         return JsonResponse(data)
+        

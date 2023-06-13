@@ -372,18 +372,18 @@
                             className: "mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0",
                             children: [
                                 [{
-                                    text: '<img src="/static/etest/deadline.png" alt="" style="width: 50px; height: 50px; margin-left: 150px;"><br><b>Быстро</b><br>Результат через 5 минут',
-                                    style: "width: 303px;"
+                                    text: '<img src="/static/etest/deadline.png" alt="" style="max-width:23%;height:auto; margin:auto;"><br><b>Быстро</b><br>Результат через 5 минут',
+                                    // style: "width: 303px;"
                                 }, {
-                                    text: '<img src="/static/etest/trust.png" alt="" style="width: 50px; height: 50px; margin-left: 165px;"><br><b>Объективно</b><br>Искусственный интеллект обучен на сотнях тысяч часов интервью'
+                                    text: '<img src="/static/etest/trust.png" alt="" style="max-width:23%;height:auto; margin:auto;" ><br><b>Объективно</b><br>Искусственный интеллект обучен на сотнях тысяч часов интервью'
                                 }, {
-                                    text: '<img src="/static/etest/certificate_icon.png" alt="" style="width: 40px; height: 40px; margin-left: 155px;"><br><b>Сертификат</b><br>Выдаем сертификат, который можно прикрепить к резюме'
+                                    text: '<img src="/static/etest/certificate_icon.png" alt="" style="max-width:18%;height:auto; margin:auto;" ><br><b>Сертификат</b><br>Выдаем сертификат, который можно прикрепить к резюме'
                                 }]
                             ].map(function(e, t) {
                                 return (0, a.jsx)("li", {
                                     children: (0, a.jsx)("ul", {
                                         role: "list",
-                                        className: "flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0",
+                                        className: "flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0 icon-divs",
                                         children: e.map(function(e, index) {
                                             return (0, a.jsx)("li", {
                                                 className: "flex",
@@ -513,7 +513,7 @@
                                                 className: (0, n.Z)("group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6", t === s ? " lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10" : "hover:bg-white/10 lg:hover:bg-white/5"),
                                                 children: [(0, a.jsx)("h3", {
                                                     children: (0, a.jsxs)(R.O, {
-                                                        className: (0, n.Z)("font-display text-lg focus:outline-none", t === s ? "text-blue-600 lg:text-white" : "text-blue-100 hover:text-white lg:text-white"),
+                                                        className: (0, n.Z)("font-display text-lg focus:outline-none ", t === s ? "text-blue-600 lg:text-white slider-btn" : "text-blue-100 hover:text-white lg:text-white "),
                                                         children: [(0, a.jsx)("span", {
                                                             className: "absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"
                                                         }), e.title]

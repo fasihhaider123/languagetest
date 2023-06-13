@@ -493,6 +493,9 @@ label.valid:after {
 }
 
 @media screen and (max-width: 1200px) {
+    .mid-heading{
+        font-size: 79%;
+    }
     .container {
         width:calc( 100% - 30px);
         max-width: 100%
@@ -500,12 +503,23 @@ label.valid:after {
 }
 
 @media screen and (min-width: 1024px) {
+    .mid-heading{
+        font-size: 79%;
+    }
     .container {
         max-width:1200px
     }
 }
 
 @media screen and (max-width: 768px) {
+    .mid-heading{
+        font-size: 79%;
+    }
+    .relative {
+        position: relative;
+        font-size: 79%;
+    }
+
     .signup-content,.signin-content {
         flex-direction:column;
         -moz-flex-direction: column;
@@ -570,6 +584,11 @@ label.valid:after {
 }
 
 @media screen and (max-width: 400px) {
+    .relative {
+        position: relative;
+        font-size: 79%;
+    }
+    
     .social-login {
         flex-direction:column;
         -moz-flex-direction: column;
