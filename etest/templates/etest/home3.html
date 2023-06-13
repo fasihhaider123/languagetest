@@ -30,6 +30,14 @@
 <script src="{% static 'etest/_next/chunks/pages/index-4b56581aa4b94aa1.js' %}" defer=""></script>
 
 
+<style>
+    @media (max-width:400px) {
+
+        .trust_icon {
+            margin-left: 126px;
+        }
+    }
+</style>
 
 
 
@@ -50,7 +58,7 @@
             <nav class="relative z-50 flex justify-between">
                 <div class="flex items-center md:gap-x-12">
                     <!-- <div><span class="h-10 w-auto">Speaklab</span></div> -->
-                    <div style="width: 150px;"><img src="{% static 'etest/Logowhite.jpg' %}" alt="Speaklab" ></div>
+                    <div style="width: 150px;"><img src="{% static 'etest/Logowhite.jpg' %}" alt="Speaklab"></div>
                     <div class="hidden md:flex md:gap-x-6"><a href="#features"
                             class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Фунции</a><a
                             href="#testimonials"
@@ -59,9 +67,10 @@
                             class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Цены</a>
                     </div>
                 </div>
-                <div class="flex items-center gap-x-5 md:gap-x-8" ><a href="{% url 'resgister' %}"
+                <div class="flex items-center gap-x-5 md:gap-x-8"><a href="{% url 'resgister' %}"
                         class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
-                       target="_blank" style="background-color: rgb(89, 46, 207);"><span>Попробовать бесплатно <span class="hidden lg:inline"></span></span></a>
+                        target="_blank" style="background-color: rgb(89, 46, 207);"><span>Попробовать бесплатно <span
+                                class="hidden lg:inline"></span></span></a>
                     <div class="-mr-1 md:hidden">
                         <div data-headlessui-state=""><button
                                 class="relative z-10 flex h-8 w-8 items-center justify-center [&amp;:not(:focus-visible)]:focus:outline-none"
@@ -81,54 +90,67 @@
     <main>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
             <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-                Проверь свой уровнь <!-- --> <span class="relative whitespace-nowrap text-blue-600"><svg
-                        aria-hidden="true" viewBox="0 0 418 42"
-                        class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none">
+                Проверь свой уровнь <!-- --> <span class="relative text-blue-600"><svg aria-hidden="true"
+                        viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                        preserveAspectRatio="none">
                         <path
                             d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z">
                         </path>
-                    </svg><span class="relative mid-heading" style="color: rgb(89, 46, 207);">разговорного английского </span></span> <!-- -->языка</h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Платформа на базе искусственного интеллекта оценит 
+                    </svg><span class="relative mid-heading" style="color: rgb(89, 46, 207);">разговорного английского
+                    </span></span> <!-- -->языка</h1>
+            <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Платформа на базе искусственного
+                интеллекта оценит
                 уровень разговорного языка с учетом акцента</p>
             <div class="mt-10 flex justify-center gap-x-6"><a href="{% url 'resgister' %}"
                     class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-                    target="_blank">Попробовать  бесплатно</a></div>
+                    target="_blank">Попробовать бесплатно</a></div>
             <div class="mt-36 lg:mt-44">
-                
-                <ul role="list"
+
+                <!-- <ul role="list"
                     class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0">
                     <li>
                         <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
                             <li class="flex">
-                                    <span style="
+                                <span style="
                                     width: 303px; margin-bottom: 27px;
-                                " ><img src="{% static 'etest/deadline.png' %}" alt="" style="width: 50px; height: 50px; margin-left: 124px;"><br> <b> Быстро</b><br>
-                                     Результат через 5 минут</span>
+                                "><img class="dead_icon" src="{% static 'etest/deadline.png' %}" alt=""
+                                        style="width: 50px; height: 50px; margin-left: 124px;"><br> <b> Быстро</b><br>
+                                    Результат через 5 минут</span>
 
-                                </li>
+                            </li>
                             <li class="flex">
-                                    <span><img src="{% static 'etest/trust.png' %}" alt="" style="width: 50px; height: 50px; margin-left: 177px;"><br> <b> Объективно </b><br>
-                                        Исскусственный интеллект обучен на сотнях тысяч часов интервью</span>
-                                </li>
+                                <span><img class="trust_icon" src="{% static 'etest/trust.png' %}" alt=""
+                                        style="width: 50px; height: 50px; margin-left: 177px;"><br> <b> Объективно
+                                    </b><br>
+                                    Исскусственный интеллект обучен на сотнях тысяч часов интервью</span>
+                            </li>
                             <li class="flex">
-                                    <span><img src="{% static 'etest/certificate_icon.png' %}" alt="" style="width: 40px; height: 40px; margin-left: 160px;"><br> <b> Сертификат</b><br>
-                                        Выдаем сертификат, который можно прикрепить к резюме</span>
-                                </li>
+                                <span><img class="cer_icon" src="{% static 'etest/certificate_icon.png' %}" alt=""
+                                        style="width: 40px; height: 40px; margin-left: 160px;"><br> <b>
+                                        Сертификат</b><br>
+                                    Выдаем сертификат, который можно прикрепить к резюме</span>
+                            </li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
-                            <li class="flex"><img alt="Ziprecruiter" loading="lazy" width="219" height="48"
-                                    decoding="async" data-nimg="1" style="color:transparent"
-                                    src="{% static 'etest/_next/media/ziprecruiter.f5a77958.svg' %}" /></li>
-                            <li class="flex"><img alt="Simplyhired" loading="lazy" width="290" height="48"
-                                    decoding="async" data-nimg="1" style="color:transparent"
-                                    src="{% static 'etest/_next/media/simplyhired.8f97df09.svg' %}" /></li>
-                            <li class="flex"><img alt="Linkedin" loading="lazy" width="197" height="48" decoding="async"
-                                    data-nimg="1" style="color:transparent"
-                                    src="{% static 'etest/_next/media/linkedin.9d0d99d5.svg' %}" /></li>
+                </ul>
+                 -->
+                <ul role="list"
+                    class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0">
+                    <li>
+                        <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0 icon-divs">
+                            <!-- <li class="flex deadlineclass"><span style="width: 359px;margin-bottom: 31px;"><img -->
+                                <li class="flex deadlineclass"><span style=""><img
+                                        src="/static/etest/deadline.png" alt=""
+                                        style="width: 50px;height: 50px;margin-left: 150px;"><br><b>Быстро</b><br>Результат
+                                    через 5 минут</span></li>
+                            <li class="flex trustclass"><span><img src="/static/etest/trust.png" alt=""
+                                        style="width: 50px;height: 50px;margin-left: 166px;"><br><b>Объективно</b><br>Искусственный
+                                    интеллект обучен на сотнях тысяч часов интервью</span></li>
+                            <li class="flex certclass"><span><img src="/static/etest/certificate_icon.png" alt=""
+                                        style="width: 40px;height: 40px;margin-left: 153px;"><br><b>Сертификат</b><br>Выдаем
+                                    сертификат, который можно прикрепить к резюме</span></li>
                         </ul>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -139,8 +161,10 @@
                 style="color:transparent" src="{% static 'etest/_next/media/purplebg.png' %}" />
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
                 <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-                    <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">Первое приложение для оценки разговорного языка</h2>
-                    <p class="mt-6 text-lg tracking-tight text-blue-100">Проверяй и улучшай свой разговорный язык с помощью инструмента на базе ИИ</p>
+                    <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">Первое
+                        приложение для оценки разговорного языка</h2>
+                    <p class="mt-6 text-lg tracking-tight text-blue-100">Проверяй и улучшай свой разговорный язык с
+                        помощью инструмента на базе ИИ</p>
                 </div><button type="button" aria-hidden="true"
                     style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></button>
                 <div
@@ -150,42 +174,50 @@
                             role="tablist" aria-orientation="horizontal">
                             <div
                                 class="group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6  lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10">
-                                <h3><button class="font-display text-lg focus:outline-none text-blue-600 lg:text-white"
+                                <h3><button class="font-display text-lg focus:outline-none slider-btn text-blue-600 lg:text-white"
                                         id="headlessui-tabs-tab-:R2ba9m:" role="tab" type="button" aria-selected="true"
                                         tabindex="0" data-headlessui-state="selected"><span
-                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Практикуйся эффективно</button></h3>
-                                <p class="mt-2 hidden text-sm lg:block text-white">Измеряй уровень разговорного языка по мере изучения 
+                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Практикуй
+                                        эффективно</button></h3>
+                                <p class="mt-2 hidden text-sm lg:block text-white">Измеряй уровень разговорного языка по
+                                    мере изучения
                                     и подготовки к интервью и собеседованиям</p>
                             </div>
                             <div
                                 class="group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5">
                                 <h3><button
-                                        class="font-display text-lg focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                        class="font-display text-lg focus:outline-none slider-btn text-blue-100 hover:text-white lg:text-white"
                                         id="headlessui-tabs-tab-:R2ja9m:" role="tab" type="button" aria-selected="false"
                                         tabindex="-1" data-headlessui-state=""><span
-                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Используй силу  Искусственного интеллекта</button></h3>
-                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Платформа обучена на сотнях тысяч часов интервью 
+                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Используй
+                                        силу Искусственного интеллекта</button></h3>
+                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Платформа
+                                    обучена на сотнях тысяч часов интервью
                                     с разными акцентами</p>
                             </div>
                             <div
                                 class="group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5">
                                 <h3><button
-                                        class="font-display text-lg focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                        class="font-display text-lg focus:outline-none slider-btn text-blue-100 hover:text-white lg:text-white"
                                         id="headlessui-tabs-tab-:R2ra9m:" role="tab" type="button" aria-selected="false"
                                         tabindex="-1" data-headlessui-state=""><span
-                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Получи сертификат</button></h3>
-                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Мы выдаем цифровой сертификат об уровне разговорного 
-                                    английского языка, который можно приложить к резюме 
+                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Получи
+                                        сертификат</button></h3>
+                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Мы выдаем
+                                    цифровой сертификат об уровне разговорного
+                                    английского языка, который можно приложить к резюме
                                     или портфолио</p>
                             </div>
                             <div
                                 class="group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6 hover:bg-white/10 lg:hover:bg-white/5">
                                 <h3><button
-                                        class="font-display text-lg focus:outline-none text-blue-100 hover:text-white lg:text-white"
+                                        class="font-display text-lg focus:outline-none slider-btn text-blue-100 hover:text-white lg:text-white"
                                         id="headlessui-tabs-tab-:R33a9m:" role="tab" type="button" aria-selected="false"
                                         tabindex="-1" data-headlessui-state=""><span
-                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Практикуй ответы на типичные вопросы </button></h3>
-                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Меняй стартовые вопросы и тренируй ответы на них, 
+                                            class="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl"></span>Практикуй
+                                        ответы на типичные вопросы </button></h3>
+                                <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Меняй
+                                    стартовые вопросы и тренируй ответы на них,
                                     для более уверенного прохождения интервью и собеседований </p>
                             </div>
                         </div>
@@ -205,7 +237,8 @@
                                 class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                                 <img alt="" fetchpriority="high" width="2174" height="1464" decoding="async"
                                     data-nimg="1" class="w-full" style="color:transparent"
-                                    src="{% static 'etest/_next/media/vat-returns.7402820f.png' %}" /></div>
+                                    src="{% static 'etest/_next/media/vat-returns.7402820f.png' %}" />
+                            </div>
                         </div>
                         <div id="headlessui-tabs-panel-:Rla9m:" role="tabpanel" tabindex="-1" hidden=""
                             style="display:none" data-headlessui-state="">
@@ -220,7 +253,8 @@
                                 class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                                 <img alt="" fetchpriority="high" width="2174" height="1464" decoding="async"
                                     data-nimg="1" class="w-full" style="color:transparent"
-                                    src="{% static 'etest/_next/media/expenses.3f331919.png' %}" /></div>
+                                    src="{% static 'etest/_next/media/expenses.3f331919.png' %}" />
+                            </div>
                         </div>
                         <div id="headlessui-tabs-panel-:Rta9m:" role="tabpanel" tabindex="-1" hidden=""
                             style="display:none" data-headlessui-state="">
@@ -236,7 +270,8 @@
                                 class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                                 <img alt="" fetchpriority="high" width="2174" height="1464" decoding="async"
                                     data-nimg="1" class="w-full" style="color:transparent"
-                                    src="{% static 'etest/_next/media/reporting.2ad6f065.png' %}" /></div>
+                                    src="{% static 'etest/_next/media/reporting.2ad6f065.png' %}" />
+                            </div>
                         </div>
                         <div id="headlessui-tabs-panel-:R15a9m:" role="tabpanel" tabindex="-1" hidden=""
                             style="display:none" data-headlessui-state="">
@@ -252,7 +287,8 @@
                                 class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                                 <img alt="" fetchpriority="high" width="2174" height="1464" decoding="async"
                                     data-nimg="1" class="w-full" style="color:transparent"
-                                    src="{% static 'etest/_next/media/payroll.517af4e7.png' %}" /></div>
+                                    src="{% static 'etest/_next/media/payroll.517af4e7.png' %}" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -472,8 +508,10 @@
         <section id="testimonials" aria-label="What our customers are saying" class="bg-slate-50 py-20 sm:py-32">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl md:text-center">
-                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Узнай, что говорят клиенты о платформе</h2>
-                    <p class="mt-4 text-lg tracking-tight text-slate-700">Сервис запущен недавно, поэтому мы внимательно относимся к каждому отзыву</p>
+                    <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Узнай, что говорят
+                        клиенты о платформе</h2>
+                    <p class="mt-4 text-lg tracking-tight text-slate-700">Сервис запущен недавно, поэтому мы внимательно
+                        относимся к каждому отзыву</p>
                 </div>
                 <ul role="list"
                     class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
@@ -488,7 +526,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -513,7 +552,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -543,7 +583,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -568,7 +609,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -597,7 +639,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -622,7 +665,8 @@
                                         </path>
                                     </svg>
                                     <blockquote class="relative">
-                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be here.</b>
+                                        <p class="text-lg tracking-tight text-slate-900"><b>Your testimonial may be
+                                                here.</b>
                                         </p>
                                     </blockquote>
                                     <figcaption
@@ -654,10 +698,12 @@
                                     d="M240.172 22.994c-8.007 1.246-15.477 2.23-31.26 4.114-18.506 2.21-26.323 2.977-34.487 3.386-2.971.149-3.727.324-6.566 1.523-15.124 6.388-43.775 9.404-69.425 7.31-26.207-2.14-50.986-7.103-78-15.624C10.912 20.7.988 16.143.734 14.657c-.066-.381.043-.344 1.324.456 10.423 6.506 49.649 16.322 77.8 19.468 23.708 2.65 38.249 2.95 55.821 1.156 9.407-.962 24.451-3.773 25.101-4.692.074-.104.053-.155-.058-.135-1.062.195-13.863-.271-18.848-.687-16.681-1.389-28.722-4.345-38.142-9.364-15.294-8.15-7.298-19.232 14.802-20.514 16.095-.934 32.793 1.517 47.423 6.96 13.524 5.033 17.942 12.326 11.463 18.922l-.859.874.697-.006c2.681-.026 15.304-1.302 29.208-2.953 25.845-3.07 35.659-4.519 54.027-7.978 9.863-1.858 11.021-2.048 13.055-2.145a61.901 61.901 0 0 0 4.506-.417c1.891-.259 2.151-.267 1.543-.047-.402.145-2.33.913-4.285 1.707-4.635 1.882-5.202 2.07-8.736 2.903-3.414.805-19.773 3.797-26.404 4.829Zm40.321-9.93c.1-.066.231-.085.29-.041.059.043-.024.096-.183.119-.177.024-.219-.007-.107-.079ZM172.299 26.22c9.364-6.058 5.161-12.039-12.304-17.51-11.656-3.653-23.145-5.47-35.243-5.576-22.552-.198-33.577 7.462-21.321 14.814 12.012 7.205 32.994 10.557 61.531 9.831 4.563-.116 5.372-.288 7.337-1.559Z">
                                 </path>
                             </svg><span class="relative">Сервис полностью бесплатный</h2>
-                    <p class="mt-4 text-lg text-slate-400">Лучший способ помочь нам - поделиться сервисом со своими друзьями и всеми, кто может получить пользу из его использования.</p>
+                    <p class="mt-4 text-lg text-slate-400">Лучший способ помочь нам - поделиться сервисом со своими
+                        друзьями и всеми, кто может получить пользу из его использования.</p>
                 </div>
                 <div class="mx-auto mt-16 flex justify-center">
-                    <section class="flex flex-col rounded-3xl px-6 sm:px-8 order-first bg-blue-600 py-8 lg:order-none" style="background-color: rgb(89, 46, 207);">
+                    <section class="flex flex-col rounded-3xl px-6 sm:px-8 order-first bg-blue-600 py-8 lg:order-none"
+                        style="background-color: rgb(89, 46, 207);">
                         <h3 class="mt-5 font-display text-lg text-white">Бесплатно</h3>
                         <p class="mt-2 text-base text-white">Подходит для каждого</p>
                         <p class="order-first font-display text-5xl font-light tracking-tight text-white">0 руб.</p>
@@ -705,7 +751,8 @@
                                 </svg><span class="ml-4">Используй силу Искусственного интеллекта</span></li>
                         </ul><a href="{% url 'resgister' %}"
                             class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-8"
-                            target="_blank" aria-label="Get started with the Early adopter plan for $0">Попробовать бесплатно</a>
+                            target="_blank" aria-label="Get started with the Early adopter plan for $0">Попробовать
+                            бесплатно</a>
                     </section>
                 </div>
             </div>
@@ -718,24 +765,30 @@
                 <div class="mx-auto max-w-2xl lg:mx-0">
                     <h2 id="faq-title" class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
                         Часто задаваемые вопросы</h2>
-                    <p class="mt-4 text-lg tracking-tight text-slate-700">Если вы не можете найти то, что ищете, свяжитесь с командой, отправив нам сообщение в Telegram.</p>
+                    <p class="mt-4 text-lg tracking-tight text-slate-700">Если вы не можете найти то, что ищете,
+                        свяжитесь с командой, отправив нам сообщение в Telegram.</p>
                 </div>
                 <ul role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
                     <li>
                         <ul role="list" class="flex flex-col gap-y-8">
                             <li>
                                 <h3 class="font-display text-lg leading-7 text-slate-900">Зачем этот сервис нужен?</h3>
-                                <p class="mt-4 text-sm text-slate-700">Цель сервиса - предоставить людям максимально объективный и
-                                     простой способ оценки разговорного английского языка. Например, он пригодится для улучшения 
-                                     навыков разговора или для подготовки к собеседованию в зарубежную компанию. Кроме того вы получите цифровой сертификат</p>
+                                <p class="mt-4 text-sm text-slate-700">Цель сервиса - предоставить людям максимально
+                                    объективный и
+                                    простой способ оценки разговорного английского языка. Например, он пригодится для
+                                    улучшения
+                                    навыков разговора или для подготовки к собеседованию в зарубежную компанию. Кроме
+                                    того вы получите цифровой сертификат</p>
                             </li>
                             <li>
-                                <h3 class="font-display text-lg leading-7 text-slate-900">Как воспользоваться сервисом?</h3>
-                                <p class="mt-4 text-sm text-slate-700">Сервис задаст случайный вопрос на общую тему, а вам нужно будет записать аудиосообщение с 
-                                    ответом на него длиной до 1 минуты. В результате сервис покажет ваш результат, с 
+                                <h3 class="font-display text-lg leading-7 text-slate-900">Как воспользоваться сервисом?
+                                </h3>
+                                <p class="mt-4 text-sm text-slate-700">Сервис задаст случайный вопрос на общую тему, а
+                                    вам нужно будет записать аудиосообщение с
+                                    ответом на него длиной до 1 минуты. В результате сервис покажет ваш результат, с
                                     учетом акцента</p>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li>
@@ -743,40 +796,44 @@
                             <li>
                                 <h3 class="font-display text-lg leading-7 text-slate-900">Зачем нужен сертификат?
                                 </h3>
-                                <p class="mt-4 text-sm text-slate-700">Сейчас мало сервисов, которые способны оценить и 
+                                <p class="mt-4 text-sm text-slate-700">Сейчас мало сервисов, которые способны оценить и
                                     подтвердить уровень разговорного английского языка.
                                     Сертификат можно приложить к резюме или портфолио,
-                                    показав будущим партнерам или работодателям свой 
+                                    показав будущим партнерам или работодателям свой
                                     уровень. </p>
                             </li>
                             <li>
-                                <h3 class="font-display text-lg leading-7 text-slate-900">Можно ли выбирать вопрос для ответа?</h3>
-                                <p class="mt-4 text-sm text-slate-700">На данный момент нет, сервис присылает случайный 
-                                    вопрос. Но мы сейчас работаем над возможностью 
-                                    выбора вопроса и даже сценария диалога, например, 
+                                <h3 class="font-display text-lg leading-7 text-slate-900">Можно ли выбирать вопрос для
+                                    ответа?</h3>
+                                <p class="mt-4 text-sm text-slate-700">На данный момент нет, сервис присылает случайный
+                                    вопрос. Но мы сейчас работаем над возможностью
+                                    выбора вопроса и даже сценария диалога, например,
                                     собеседования</p>
                             </li>
-                            
+
                         </ul>
                     </li>
-                     <li>
+                    <li>
                         <ul role="list" class="flex flex-col gap-y-8">
                             <li>
-                                <h3 class="font-display text-lg leading-7 text-slate-900">Нужно ли мне предоставлять какую-либо 
-                                    личную информацию чтобы воспользоваться 
+                                <h3 class="font-display text-lg leading-7 text-slate-900">Нужно ли мне предоставлять
+                                    какую-либо
+                                    личную информацию чтобы воспользоваться
                                     сервисом?</h3>
-                                <p class="mt-4 text-sm text-slate-700">Нет, пользователям не нужно предоставлять никакой 
-                                    личной информации, чтобы чтобы воспользоваться 
+                                <p class="mt-4 text-sm text-slate-700">Нет, пользователям не нужно предоставлять никакой
+                                    личной информации, чтобы чтобы воспользоваться
                                     сервисом. </p>
                             </li>
                             <li>
-                                <h3 class="font-display text-lg leading-7 text-slate-900">У меня есть вопрос, предложение или отзыв.
+                                <h3 class="font-display text-lg leading-7 text-slate-900">У меня есть вопрос,
+                                    предложение или отзыв.
                                     Как я могу связаться с командой?</h3>
-                                <p class="mt-4 text-sm text-slate-700">Отличная идея! В настоящее время лучший способ связаться с 
+                                <p class="mt-4 text-sm text-slate-700">Отличная идея! В настоящее время лучший способ
+                                    связаться с
                                     командой командой - это отправить нам сообщение в telegram.</p>
                             </li>
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </section>
@@ -796,9 +853,8 @@
             </div>
             <div
                 class="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
-                <div class="flex gap-x-6"><a class="group" aria-label="TaxPal on Twitter"
-                        href="#"><svg aria-hidden="true"
-                            class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700">
+                <div class="flex gap-x-6"><a class="group" aria-label="TaxPal on Twitter" href="#"><svg
+                            aria-hidden="true" class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700">
                             <path
                                 d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.073 4.073 0 0 1 2.8 9.713v.052a4.105 4.105 0 0 0 3.292 4.022 4.093 4.093 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.615 11.615 0 0 0 6.29 1.84">
                             </path>
@@ -808,8 +864,7 @@
         </div>
     </footer>
 </div>
-<script id="__NEXT_DATA__"
-    type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"7sWYYXXejz5Pd1w5q0J0o","assetPrefix":"/static","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"7sWYYXXejz5Pd1w5q0J0o","assetPrefix":"/static","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}
 </script>
 
 
