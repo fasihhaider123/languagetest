@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-n9@)@@ydaml#=4f*g$8$bume$*uekb$s$et$v!(r7m7bsn^l#c
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app','https://speaklab.azurewebsites.net']
+ALLOWED_HOSTS = ['candidate-matchmaking.azurewebsites.net','speech-examiner.azurewebsites.net','languagetest.speaklab.app','speaklab.azurewebsites.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app','https://speaklab.azurewebsites.net']
 
