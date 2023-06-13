@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-n9@)@@ydaml#=4f*g$8$bume$*uekb$s$et$v!(r7m7bsn^l#c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app','https://speaklab.azurewebsites.net']
+
+CSRF_TRUSTED_ORIGINS = ['https://candidate-matchmaking.azurewebsites.net','https://speech-examiner.azurewebsites.net','https://languagetest.speaklab.app','https://speaklab.azurewebsites.net']
 
 
 # Application definition
