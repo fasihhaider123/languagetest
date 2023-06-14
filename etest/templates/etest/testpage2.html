@@ -280,7 +280,7 @@ const test_start = () => {
           const a = document.createElement('a');
           a.href = url;
           a.download = 'recording.wav';
-          a.click();
+          // a.click();
           chunks.length = 0; // Clear the chunks after creating the download link
           let prompt_text = document.getElementById('question_h2').textContent
           const formData = new FormData();
