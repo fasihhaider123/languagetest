@@ -24,7 +24,7 @@
       }
 
       .h2text {
-        padding: 8%;
+        padding: 0%;
 
       }
 
@@ -41,7 +41,7 @@
       }
 
       .corner-button {
-        background-color: blue;
+        background-color: rgb(89, 46, 207);
         color: white;
         border: none;
         border-radius: 5px;
@@ -83,6 +83,48 @@
         margin-left: 24%;
       }
 
+      .divh2{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+      }
+
+      .loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Create the loading icon */
+.loading-icon {
+  display: none;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Define the loading icon animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add a slight blur to the background */
+.content {
+  filter: blur(2px);
+}
+
+
+
+
+
+
       /* Media Queries */
 @media (max-width: 1200px) {
   .container {
@@ -122,7 +164,7 @@
 
 @media (max-width: 480px) {
   .container {
-    height: 250px;
+    height: 400px;
     margin: 20% auto;
   }
 
@@ -136,6 +178,7 @@
     padding: 8px 12px;
     font-size: 12px;
     bottom: 10px;
+
   }
 
   .corner-button.left {
@@ -144,7 +187,7 @@
   }
 
   .corner-button.middle {
-    left: 50%;
+    left: 48%;
     transform: translateX(-50%);
     width: 100px;
   }
@@ -155,7 +198,7 @@
 
   .recorder-timer {
     display: block;
-    margin-bottom: 47px;
+    margin-bottom: 30px;
     margin-left: -68px;
 }
   }
@@ -166,13 +209,17 @@
     {%endblock%}
 
 {%block body%}
+<div class="loading-container">
+  <div class="loading-icon" id="loadingicon"></div>
+</div>
 <div class="container">
   {% csrf_token %}
-  <h2 class="h2text" id="question_h2"></h2>
+  <div class="divh2"><h2 class="h2text" id="question_h2"></h2></div>
+  
   <button class="start-button" id="startbtn">Start Test</button>
   <div class="recorder-timer" id="timer"></div>
   <button class="corner-button left" id="startrec">Start Recording</button>
-  <button class="corner-button middle" id="downloadButton">Download</button>
+  <button class="corner-button middle" id="downloadButton">Download Certificate</button>
   <button class="corner-button right" id="stoprec">Stop Recording</button>
 
 </div>
@@ -180,14 +227,17 @@
     <script>
 
 const test_start = () => {
+        document.getElementById('loadingicon').style.display = 'block';
         // fetch(`{% url 'question_generator' %}`)
         fetch("https://speech-examiner.azurewebsites.net/api/random-prompt",{
           method: 'POST'
         })
-        .then(response => response.json())
+        .then(response =>  {document.getElementById('loadingicon').style.display = 'none';
+            response.json();
+          })
         .then(data => {
           document.getElementById('question_h2').textContent = data.prompt;
-        //   document.getElementById('question_h2').textContent = 'tell us';
+          // document.getElementById('question_h2').textContent = 'sdjfnsd sdjkfnsdjbfksdbf ddfd';
           document.getElementById('question_h2').style.display = 'block';
           document.getElementById('startbtn').style.display = 'none';
           document.getElementById('startrec').style.display = 'block';
@@ -239,8 +289,8 @@ const test_start = () => {
           formData.append('prompt', prompt_text);
 
           const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-        //   fetch("{% url 'audio_file' %}", {
+          document.getElementById('loadingicon').style.display = 'block';
+          // fetch("{% url 'audio_file' %}", {
           fetch("https://speech-examiner.azurewebsites.net/api/speech_ranking", {
             method: 'POST',
             // headers: {
@@ -248,7 +298,9 @@ const test_start = () => {
             // },
             body: formData
           })
-            .then(response => response.json())
+            .then(response => {document.getElementById('loadingicon').style.display = 'none';
+            response.json();
+          })
             .then(data => {
               // Process the API response
               document.getElementById('question_h2').textContent = data.rank;
