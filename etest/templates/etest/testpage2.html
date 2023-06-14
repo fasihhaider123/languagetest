@@ -297,11 +297,10 @@ const test_start = () => {
             // },
             body: formData
           })
-            .then(response => {document.getElementById('loadingicon').style.display = 'none';
-            response.json();
-          })
+            .then(response => response.json())
             .then(data => {
               // Process the API response
+              document.getElementById('loadingicon').style.display = 'none';
               document.getElementById('question_h2').textContent = data.rank;
             //   document.getElementById('question_h2').innerHTML += '<p id="resultp"> is your result</p>';
               document.getElementById('downloadButton').style.display = 'block';
