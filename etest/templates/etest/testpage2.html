@@ -232,10 +232,9 @@ const test_start = () => {
         fetch("https://speech-examiner.azurewebsites.net/api/random-prompt",{
           method: 'POST'
         })
-        .then(response =>  {document.getElementById('loadingicon').style.display = 'none';
-            response.json();
-          })
+        .then(response => response.json())
         .then(data => {
+          document.getElementById('loadingicon').style.display = 'none';
           document.getElementById('question_h2').textContent = data.prompt;
           // document.getElementById('question_h2').textContent = 'sdjfnsd sdjkfnsdjbfksdbf ddfd';
           document.getElementById('question_h2').style.display = 'block';
